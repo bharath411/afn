@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="NaukriAutomation" parallel="methods" thread-count="6">
+
+	<test name="Regression">
+
+		<classes>
+			<class name="com.slokam.core.naukri.test.scripts.TestProfile" />
+		</classes>
+	</test>
+
+
+</suite>
