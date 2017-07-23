@@ -13,45 +13,49 @@ public class TestProfile extends BaseTestCase {
 	 */
 	String username = "bharath.selenium26@gmail.com";
 	String password = "selenium123";
-	@Test
-	public void verifyUpdateProfile() {
-		System.out.println("I am in verifyUpdateProfile");
-	}
 
 	@BeforeMethod
-	public void beforMetod(){
+	public void loginToNaukri() {
 		driver.get("https://www.naukri.com/");
-		if(isElementPresent(By.xpath("//div[text()='My Naukri']"))){
-			driver.findElement(By.xpath("//div[text()='My Naukri']")).click();;
-		}
-		login(username,password);
-	}
-	//@Test
-	public void verifyCreateProfile() {
-		System.out.println("I am in verifyCreateProfile");
+		/*
+		 * if(isElementPresent(By.xpath("//div[text()='My Naukri']"))){
+		 * //logout(); }
+		 */
+		login(username, password);
 	}
 
 	@AfterMethod
-	public void afterMethod(){
-		logout();
+	public void afterMethod() {
+		// logout();
 	}
-	public void login(String username ,String password) {
+
+	public void login(String username, String password) {
 		driver.findElement(By.xpath("//div[text()='Login']")).click();
 		sleep(5);
 		driver.findElement(By.id("eLogin")).sendKeys(username);
 		driver.findElement(By.id("pLogin")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@value='Login']")).click();
 	}
-	
-	public void logout(){
+
+	public void logout() {
 		Actions act = new Actions(driver);
-		act.moveToElement(driver.findElement(By.xpath("//div[text()='My Naukri']"))).build().perform();
-		driver.findElement(By.xpath("//a[@title=\"Log Out\"]")).click();
+		act.moveToElement(driver.findElement(By.xpath("//a[text()='My Naukri']"))).build().perform();
+		sleep(2);
+		driver.findElement(By.xpath("//a[@title='Log Out']")).click();
 	}
-	
+
 	@Test
-	public void verifyProfileDelete(){
+	public void verifyProfileProjects() {
 		System.out.println("I am in verifyProfileDelete");
-		
+	}
+
+	@Test
+	public void verifyUpdateProfile() {
+		System.out.println("I am in verifyUpdateProfile");
+	}
+
+	@Test
+	public void verifyProfileSummary() {
+		System.out.println("I am in verifyCreateProfile");
 	}
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTestCase {
 
@@ -20,9 +20,9 @@ public class BaseTestCase {
 	 * file. 3. Update hard coded paths of binary files. 4. Browser should be in
 	 * properties files
 	 */
-	@BeforeSuite
+	@BeforeMethod
 	public void launchBrowser() {
-		String browser = "chrome";
+		String browser = "firefox";
 		/*if (browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\jars\\chromedriver.exe");
 			driver = new ChromeDriver();
