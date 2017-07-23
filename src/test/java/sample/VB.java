@@ -49,4 +49,9 @@ public class VB {
 	public void ad() {
 		System.out.println("I am in ad of AVB");
 	}
+	
+	@Test
+	public void afv() {
+		System.out.println("I am in afv of AVB");
+	}
 }
