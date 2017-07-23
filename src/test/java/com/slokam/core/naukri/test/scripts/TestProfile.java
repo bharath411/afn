@@ -48,4 +48,10 @@ public class TestProfile extends BaseTestCase {
 		act.moveToElement(driver.findElement(By.xpath("//div[text()='My Naukri']"))).build().perform();
 		driver.findElement(By.xpath("//a[@title=\"Log Out\"]")).click();
 	}
+	
+	@Test
+	public void verifyProfileDelete(){
+		System.out.println("I am in verifyProfileDelete");
+		
+	}
 }
