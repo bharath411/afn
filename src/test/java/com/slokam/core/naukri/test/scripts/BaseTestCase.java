@@ -22,7 +22,7 @@ public class BaseTestCase {
 	 */
 	@BeforeSuite
 	public void launchBrowser() {
-		String browser = "firefox";
+		String browser = "chrome";
 		/*if (browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\jars\\chromedriver.exe");
 			driver = new ChromeDriver();

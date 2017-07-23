@@ -26,7 +26,7 @@ public class TestProfile extends BaseTestCase {
 		}
 		login(username,password);
 	}
-	@Test
+	//@Test
 	public void verifyCreateProfile() {
 		System.out.println("I am in verifyCreateProfile");
 	}
@@ -36,7 +36,7 @@ public class TestProfile extends BaseTestCase {
 		logout();
 	}
 	public void login(String username ,String password) {
-		driver.findElement(By.id("login_Layer")).click();
+		driver.findElement(By.xpath("//div[text()='Login']")).click();
 		sleep(5);
 		driver.findElement(By.id("eLogin")).sendKeys(username);
 		driver.findElement(By.id("pLogin")).sendKeys(password);
