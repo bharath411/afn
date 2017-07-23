@@ -1,7 +1,9 @@
 package com.slokam.core.naukri.test.scripts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -46,7 +48,45 @@ public class TestProfile extends BaseTestCase {
 
 	@Test
 	public void verifyProfileProjects() {
-		System.out.println("I am in verifyProfileDelete");
+		//System.out.println("I am in verifyProfileDelete");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("//a[text()='Edit']")).click();
+		driver.findElement(By.id("title")).sendKeys("hi ");
+		WebElement ele=driver.findElement(By.id("cityId"));
+		Select select = new Select(ele);
+		select.selectByVisibleText("Hyderabad / Secunderabad");
+		
+		WebElement ee= driver.findElement(By.id("experienceYear"));
+		Select selects = new Select(ee);
+		selects.selectByVisibleText("Fresher");
+		
+		//WebElement eee=driver.findElement(By.xpath("//optgroup[@class='optGrp']"));
+		//Select se = new Select(eee);
+		//se.selectByVisibleText("Hyderabad");
+		
+		
+		WebElement e=driver.findElement(By.id("industryTypeId"));
+		Select ss = new Select(e);
+		ss.selectByVisibleText("Accounting/Finance");		
+		
+		WebElement eeee=driver.findElement(By.id("funcAreaId"));
+		Select ses = new Select(eeee);
+		ses.selectByVisibleText("Analytics & Business Intelligence");
+		
+		
+		WebElement eees=driver.findElement(By.id("roleId"));
+		Select seee = new Select(eees);
+		seee.selectByVisibleText("Project Architect");
+		
+		driver.findElement(By.xpath("//button[@value='Save Changes']")).click();
+		
+		
+		
+		String s=driver.findElement(By.id("confirmMessage")).getText();
+		System.out.println(s);
+		
+		
+		
 	}
 
 	@Test
