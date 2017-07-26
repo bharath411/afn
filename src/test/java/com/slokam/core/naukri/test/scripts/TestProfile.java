@@ -13,8 +13,8 @@ public class TestProfile extends BaseTestCase {
 	/**
 	 * read username , password from properties file.
 	 */
-	String username = "bharath.selenium26@gmail.com";
-	String password = "selenium123";
+	String username = "";
+	String password = "";
 
 	@BeforeMethod
 	public void loginToNaukri() {
@@ -23,6 +23,8 @@ public class TestProfile extends BaseTestCase {
 		 * if(isElementPresent(By.xpath("//div[text()='My Naukri']"))){
 		 * //logout(); }
 		 */
+		username = props.getProp("username");
+		password = props.getProp("password");
 		login(username, password);
 	}
 
@@ -91,7 +93,13 @@ public class TestProfile extends BaseTestCase {
 
 	@Test
 	public void verifyUpdateProfile() {
-		System.out.println("I am in verifyUpdateProfile");
+		System.out.println("I am verifying Verify update profile");
+		driver.findElement(By.xpath("//*[@id='compDetail']//b[text()='View and Update Profile']")).click();
+		driver.findElement(By.xpath("//*[@id='rPanel']/div/h2[1]/a[text()='Edit']")).click();
+		driver.findElement(By.xpath("//*[@id='summary']")).sendKeys("Testing for update the profile");
+		driver.findElement(By.xpath("//*[@id='editForm']/div[2]/div/button")).click();
+		String message=driver.findElement(By.xpath("//*[@id='confirmMessage']")).getText();
+		System.out.println("The message ="+message);
 	}
 
 	@Test
