@@ -11,8 +11,8 @@ public class TestProfile extends BaseTestCase {
 	/**
 	 * read username , password from properties file.
 	 */
-	String username = "bharath.selenium26@gmail.com";
-	String password = "selenium123";
+	String username = "";
+	String password = "";
 
 	@BeforeMethod
 	public void loginToNaukri() {
@@ -21,6 +21,8 @@ public class TestProfile extends BaseTestCase {
 		 * if(isElementPresent(By.xpath("//div[text()='My Naukri']"))){
 		 * //logout(); }
 		 */
+		username = props.getProp("username");
+		password = props.getProp("password");
 		login(username, password);
 	}
 

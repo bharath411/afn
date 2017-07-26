@@ -11,10 +11,15 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 
+import com.slokam.core.naukri.test.commons.dataHandlers.PropertiesReader;
+
 public class BaseTestCase {
 
 	public WebDriver driver = null;
-
+	public PropertiesReader props = new PropertiesReader();
+	public String url = "";
+	public String browser ="";
+	public long waitTime = 0;
 	/**
 	 * TODO -1. Read url from properties file. 2. Read timeout from properites
 	 * file. 3. Update hard coded paths of binary files. 4. Browser should be in
@@ -22,7 +27,10 @@ public class BaseTestCase {
 	 */
 	@BeforeMethod
 	public void launchBrowser() {
-		String browser = "firefox";
+		browser = props.getProp("browser");
+		url = props.getProp("url");
+		String time = props.getProp("waitTime");
+		waitTime = Long.parseLong(time);
 		/*if (browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\jars\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -55,9 +63,9 @@ public class BaseTestCase {
 					Assert.fail("No matching browser exists.");
 				break;
 		}
-
-		driver.get("https://www.naukri.com/");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
 		//driver.manage().window().maximize();
 
 	}
