@@ -21,6 +21,6 @@ public class LoginTest {
 	public void launchTest(@Optional("chrome") String browser){
 		
 		System.out.println(browser);
-		Assert.fail();
+		
 	}
 }
