@@ -32,5 +32,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/selenium_classes/sikuli/sikulix.jar"/>
+	<classpathentry kind="lib" path="D:/selenium_classes/sikuli/sikulixapi.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,11 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="NaukriAutomation" parallel="methods" thread-count="6">
-
+<listeners>
+	<listener class-name="com.slokam.testng.examples.ListenerImpl"></listener>
+</listeners>
+<parameter name="user" value="bharath"></parameter>
+<parameter name="pass" value="bharath123"></parameter>
+<parameter name="browser" value="firefox"></parameter>
 	<test name="Regression">
 
 		<classes>
-			<class name="com.slokam.core.naukri.test.scripts.TestProfile" />
+			<class name="com.slokam.testng.examples.LoginTest" />
 		</classes>
 	</test>
 
