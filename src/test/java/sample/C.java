@@ -12,4 +12,9 @@ public class C {
 	public void test2(){
 		System.out.println("hi srikanth");
 	}
+	
+	public void test5(){
+		System.out.println("hijgu");
+	}
+
 }
