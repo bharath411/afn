@@ -6,6 +6,6 @@ public class ProfileTest {
 
 	@Test
 	public void test1(){
-		System.out.println("I am test1");
+		System.out.println("I am test144444");
 	}
 }
