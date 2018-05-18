@@ -50,7 +50,7 @@ public class A {
 	
 	@AfterSuite
 	public void afterSuite(){
-		System.out.println("I am in a of AfterSuite of A ");
+		System.out.println("I am in  AfterSuite of A ");
 	}
 	
 	@Test
