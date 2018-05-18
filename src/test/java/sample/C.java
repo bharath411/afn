@@ -16,5 +16,10 @@ public class C {
 	public void test5(){
 		System.out.println("hijgu");
 	}
+	
+	public void test8(){
+		System.out.println("hbb");
+	
+	}
 
 }
